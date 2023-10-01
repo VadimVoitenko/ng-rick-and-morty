@@ -1,0 +1,28 @@
+<div *ngFor="let character of characters" class="item">
+  <img
+    src="{{ character.image }}"
+    alt="{{ character.name }}"
+    class="item__image"
+  />
+  <div class="item__details">
+    <a routerLink="/hero-page" class="item__title">{{ character.name }}</a>
+
+    <div class="item__status">
+      <p
+        class="item__indicator"
+        [ngClass]="{
+          alive: character.status === 'Alive',
+          dead: character.status === 'Dead',
+          unknown: character.status === 'unknown'
+        }"
+      ></p>
+      <p>{{ character.status }} - {{ character.species }}</p>
+    </div>
+
+    <span class="item__subtitle">Last known location:</span>
+    <p class="item__text">{{ character.location.name }}</p>
+
+    <span class="item__subtitle">First seen in:</span>
+    <p class="item__text">{{ character.origin.name }}</p>
+  </div>
+</div>

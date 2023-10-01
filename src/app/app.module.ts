@@ -11,6 +11,9 @@ import { ButtonComponent } from './components/partials/button-filter/button-filt
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { RickAndMortyService } from './services/rick-and-morty.service';
+import { HeroItemsComponent } from './components/partials/hero-items/hero-items.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     HeroPageComponent,
     ButtonComponent,
+    HeroItemsComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,8 +31,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSelectModule,
     MatButtonModule,
     BrowserAnimationsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [RickAndMortyService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
