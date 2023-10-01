@@ -1,0 +1,29 @@
+<div class="container">
+  <button mat-flat-button (click)="onClick()" class="filter-button">
+    {{ activeFilter ? "Filter" : "Remove Filter" }}
+  </button>
+
+  <ng-container *ngIf="isClick">
+    <div class="active-buttons">
+      <mat-form-field appearance="fill" class="select-button">
+        <mat-label>Select Item</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let item of items" [value]="item">
+            {{ item }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="keyword-button">
+        <mat-label>Add key words to find</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let item of items" [value]="item">{{
+            item
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- <button class="keyword-button">Add key words to find</button> -->
+
+      <button mat-flat-button (click)="search()">Find</button>
+    </div>
+  </ng-container>
+</div>
