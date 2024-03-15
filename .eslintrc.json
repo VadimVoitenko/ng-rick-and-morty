@@ -1,0 +1,208 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json", "test/e2e/tsconfig.json"],
+        "createDefaultProgram": true,
+        "ecmaVersion": 2021
+      },
+      "plugins": ["@typescript-eslint", "import", "todo-plz", "promise"],
+      "extends": [
+        "eslint:recommended",
+        "airbnb-typescript/base",
+        "plugin:node/recommended",
+        "plugin:promise/recommended",
+        "plugin:anti-trojan-source/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:prettier/recommended"
+      ],
+      "rules": {
+        "node/no-unsupported-features/es-syntax": ["error", { "ignores": ["modules", "dynamicImport"] }],
+        "node/no-missing-import": ["off"],
+        "node/no-extraneous-import": ["off"],
+        "node/no-extraneous-require": ["off"],
+        "node/no-unpublished-import": ["off"],
+        "prettier/prettier": [
+          "error",
+          {
+            "semi": false
+          }
+        ],
+        "linebreak-style": ["error", "unix"],
+        "class-methods-use-this": "off",
+        "comma-dangle": ["off"],
+        "no-duplicate-imports": "error",
+        "no-redeclare": "error",
+        "space-before-blocks": "error",
+        "space-infix-ops": "error",
+        "import/prefer-default-export": "off",
+        "import/no-extraneous-dependencies": "off",
+        "eol-last": ["error", "always"],
+        "import/no-relative-parent-imports": "error",
+        "import/no-relative-packages": "error",
+        "import/order": [
+          "error",
+          {
+            "pathGroups": [
+              {
+                "pattern": "@angular/**",
+                "group": "internal",
+                "position": "before"
+              },
+              {
+                "pattern": "src/*.*",
+                "group": "internal",
+                "position": "before"
+              },
+              {
+                "pattern": "src/app/*.*",
+                "group": "internal",
+                "position": "before"
+              },
+              {
+                "pattern": "src/app/core/**",
+                "group": "internal",
+                "position": "before"
+              },
+              {
+                "pattern": "src/app/shared/**",
+                "group": "internal",
+                "position": "before"
+              },
+              {
+                "pattern": "src/app/modules/**",
+                "group": "internal",
+                "position": "before"
+              },
+              {
+                "pattern": "src/environments/**",
+                "group": "internal",
+                "position": "before"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": [],
+            "newlines-between": "always",
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
+          }
+        ],
+        "import/newline-after-import": ["error"],
+        "import/no-default-export": "error",
+        "newline-before-return": ["error"],
+        "no-cond-assign": ["error", "always"],
+        "no-console": "error",
+        "lines-between-class-members": "off",
+        "@typescript-eslint/lines-between-class-members": "off",
+        "consistent-return": ["off"],
+        "padding-line-between-statements": [
+          "error",
+          {
+            "blankLine": "always",
+            "prev": "*",
+            "next": "return"
+          },
+          {
+            "blankLine": "always",
+            "prev": ["const", "let"],
+            "next": "*"
+          },
+          {
+            "blankLine": "any",
+            "prev": ["const", "let"],
+            "next": "block-like"
+          },
+          {
+            "blankLine": "any",
+            "prev": ["const", "let"],
+            "next": ["const", "let"]
+          },
+          {
+            "blankLine": "always",
+            "prev": "block-like",
+            "next": "*"
+          },
+          {
+            "blankLine": "never",
+            "prev": "case",
+            "next": "*"
+          },
+          {
+            "blankLine": "always",
+            "prev": "*",
+            "next": "export"
+          }
+        ],
+        "object-curly-newline": ["off"],
+        "no-underscore-dangle": [
+          "error",
+          {
+            "allow": ["_id"]
+          }
+        ],
+        "@typescript-eslint/consistent-type-assertions": [
+          "error",
+          {
+            "assertionStyle": "angle-bracket"
+          }
+        ],
+        "@typescript-eslint/typedef": "off",
+        "@typescript-eslint/explicit-function-return-type": ["error"],
+        "no-return-await": "off",
+        "@typescript-eslint/return-await": ["error", "always"],
+        "curly": ["error", "all"],
+        "@typescript-eslint/array-type": ["error"],
+
+        "eqeqeq": ["error", "always"],
+        "spaced-comment": ["error", "always"],
+        "@typescript-eslint/explicit-member-accessibility": ["error", { "accessibility": "no-public" }],
+        "@typescript-eslint/no-inferrable-types": "error",
+        "sort-imports": [
+          "error",
+          {
+            "allowSeparatedGroups": true,
+            "ignoreDeclarationSort": true
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended", "plugin:prettier/recommended"],
+      "plugins": ["@angular-eslint"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js"],
+      "parserOptions": {
+        "ecmaVersion": 2021,
+        "sourceType": "module",
+        "allowImportExportEverywhere": true
+      },
+      "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+      "plugins": [],
+      "rules": {}
+    }
+  ]
+}
