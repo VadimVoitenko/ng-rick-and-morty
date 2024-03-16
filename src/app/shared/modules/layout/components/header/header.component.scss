@@ -1,1 +1,70 @@
+@import 'src/assets/scss/theme-angular-starter1/bootstrap/_variables.scss';
 
+header {
+  nav {
+    min-height: 60px;
+    width: 100%;
+    padding: 10px 12px;
+    .navbar-list {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media only screen and (max-width: get-breakpoint(xs)) {
+      min-height: 0px;
+      padding: 5px;
+    }
+  }
+  section {
+    text-align: center;
+    min-height: 345px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      margin: 0;
+      text-align: center;
+      color: #202329;
+      z-index: 5;
+      font-size: 101.25px;
+      font-weight: 900;
+      line-height: 111.375px;
+      text-shadow: 0px 2px 5px #000000;
+      letter-spacing: -10px;
+    }
+
+    img {
+      position: absolute;
+      width: 100%;
+    }
+
+    @media only screen and (max-width: get-breakpoint(tb)) {
+      min-height: inherit;
+      padding: 30px 10px;
+      h1 {
+        font-size: 60px;
+        letter-spacing: -4px;
+      }
+    }
+
+    @media only screen and (max-width: get-breakpoint(sm)) {
+      padding: 0;
+      h1 {
+        font-size: 36px;
+        text-shadow: 1px 1px 2px #202329;
+        letter-spacing: -2px;
+      }
+    }
+
+    @media only screen and (max-width: get-breakpoint(xs)) {
+      padding: 0;
+      h1 {
+        font-size: 24px;
+        text-shadow: 0.5px 0.5px 1px #202329;
+        letter-spacing: -1px;
+      }
+    }
+  }
+}

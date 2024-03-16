@@ -1,8 +1,9 @@
 @import 'node_modules/bootstrap/scss/functions';
 @import 'src/assets/scss/theme-angular-starter1/bootstrap/type/mixins';
 
-$font-family-primary: "eUkraine", "Arial", Arial;
+// $font-family-primary: "eUkraine", "Arial", Arial;
 
+$font-family-primary: Roboto, Arial;
 
 $custom-file-text: ();
 
@@ -16,6 +17,10 @@ $grid-breakpoints: (
   xl: 1680px,
   xxl: 1920px,
 );
+
+@function get-breakpoint($name) {
+  @return map-get($grid-breakpoints, $name);
+}
 
 $container-max-widths: (
   xs: 1200px,
@@ -100,7 +105,6 @@ $link-decoration: '';
 
 $content-max-width: none;
 
-
 @mixin cover($position) {
   position: $position;
   display: block;
@@ -131,7 +135,7 @@ $content-max-width: none;
 $rem-base: 16px !default;
 // list-separator polyfill by Hugo Giraudel (https://sass-compatibility.github.io/#list_separator_function)
 @function rem-separator($list) {
-  @if function-exists("list-separator") ==true {
+  @if function-exists('list-separator') ==true {
     @return list-separator($list);
   }
   $test-list: ();
@@ -149,11 +153,11 @@ $rem-base: 16px !default;
   $result: ();
   $separator: rem-separator($values);
   @each $value in $values {
-    @if type-of($value) == "number" and unit($value) == "rem" and $to== "px" {
+    @if type-of($value) == 'number' and unit($value) == 'rem' and $to== 'px' {
       $result: append($result, $value / 1rem * $rem-base, $separator);
-    } @else if type-of($value) == "number" and unit($value) == "px" and $to== "rem" {
+    } @else if type-of($value) == 'number' and unit($value) == 'px' and $to== 'rem' {
       $result: append($result, $value / ($rem-base / 1rem), $separator);
-    } @else if type-of($value) == "list" {
+    } @else if type-of($value) == 'list' {
       $result: append($result, rem-convert($to, $value...), $separator);
     } @else {
       $result: append($result, $value, $separator);
@@ -167,7 +171,7 @@ $rem-base: 16px !default;
 }
 
 @mixin rem($properties, $values...) {
-  @if type-of($properties) == "map" {
+  @if type-of($properties) == 'map' {
     @each $property in map-keys($properties) {
       @include rem($property, map-get($properties, $property));
     }
