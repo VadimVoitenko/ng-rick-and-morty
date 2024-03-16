@@ -2,8 +2,15 @@ import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 
 import { environment } from 'src/environments/environment'
+import { HomeComponent } from './modules/home/pages/home/home.component'
+import { HeroComponent } from './modules/home/pages/hero/hero.component'
 
-const routes: Routes = []
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'hero/:id', component: HeroComponent },
+]
+
 const baseRoutes: Routes = [
   { path: '', loadChildren: () => import('./modules/home/home.module').then((m) => m.HomeModule) },
   { path: 'error', loadChildren: () => import('./modules/error/error.module').then((m) => m.ErrorModule) },
