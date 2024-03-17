@@ -1,0 +1,56 @@
+<section class="section-filter-btn">
+  <div class="container">
+    <div class="content">
+      <button mat-flat-button (click)="onClick()" class="filter-btn">{{ activeFilter ? 'Remove Filter' : 'Filter' }}</button>
+
+      <ng-container *ngIf="isClick">
+        <div class="active-filter-btn">
+          <div class="select-buttons">
+            <mat-form-field appearance="fill" class="select-btn">
+              <mat-label>Select Item</mat-label>
+              <mat-select [(ngModel)]="selectedItem">
+                <mat-option *ngFor="let item of items" [value]="item">
+                  {{ item }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <ng-container *ngIf="selectedItem === 'Character'">
+              <mat-form-field appearance="fill" class="select-btn">
+                <mat-label>Select parameter</mat-label>
+                <mat-select [(ngModel)]="selectedCharacter">
+                  <mat-option *ngFor="let character of characters" [value]="character"> Add {{ character }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </ng-container>
+
+            <ng-container *ngIf="selectedItem === 'Location'">
+              <mat-form-field appearance="fill" class="select-btn">
+                <mat-label>Select parameter</mat-label>
+                <mat-select [(ngModel)]="selectedEpisodes">
+                  <mat-option *ngFor="let episode of episodes" [value]="episode"> Add {{ episode }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </ng-container>
+
+            <ng-container *ngIf="selectedItem === 'Episodes'">
+              <mat-form-field appearance="fill">
+                <mat-label>Select parameter</mat-label>
+                <mat-select [(ngModel)]="selectedLocation">
+                  <mat-option *ngFor="let location of locations" [value]="location"> Add {{ location }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </ng-container>
+          </div>
+
+          <mat-form-field class="input">
+            <mat-label>Add key words to find</mat-label>
+            <input matInput />
+          </mat-form-field>
+
+          <button mat-flat-button (click)="search()" class="submit-btn">Find</button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

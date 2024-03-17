@@ -40,6 +40,7 @@ header {
     img {
       position: absolute;
       width: 100%;
+      bottom: 0;
     }
 
     @media only screen and (max-width: get-breakpoint(tb)) {

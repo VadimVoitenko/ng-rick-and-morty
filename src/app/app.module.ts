@@ -13,6 +13,7 @@ import { TranslocoRootModule } from 'src/app/transloco-root.module'
 
 import { CoreModule } from 'src/app/core/core.module'
 import { ErrorInterceptor } from 'src/app/core/interceptors/error.interceptor'
+import { MatSelectModule } from '@angular/material/select'
 
 import { environment } from 'src/environments/environment'
 
@@ -20,7 +21,15 @@ registerLocaleData(localeUk)
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, CoreModule.forRoot(), BrowserAnimationsModule, AppRoutingModule, HttpClientModule, TranslocoRootModule],
+  imports: [
+    BrowserModule,
+    CoreModule.forRoot(),
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    TranslocoRootModule,
+    MatSelectModule,
+  ],
   providers: [
     { provide: RECAPTCHA_V3_SITE_KEY, useValue: environment.recaptcha.siteKey },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
