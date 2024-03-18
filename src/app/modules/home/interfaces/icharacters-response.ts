@@ -1,6 +1,6 @@
-import { ICharecter } from './ICharacter'
+import { ICharacter } from './icharacter'
 
 export interface ICharacterResponse {
-  results: ICharecter[]
+  results: ICharacter[]
   totalCount: number
 }

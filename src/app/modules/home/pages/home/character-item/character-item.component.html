@@ -1,0 +1,26 @@
+<div class="item">
+  <img src="{{ characterItem.image }}" alt="{{ characterItem.image }}" class="item-image" />
+
+  <div class="item-details">
+    <a routerLink="/hero/{{ characterItem.id }}" class="item-details__title">{{ characterItem.name }}</a>
+
+    <div class="item-details__status">
+      <p
+        class="status-indicator"
+        [ngClass]="{
+          alive: characterItem.status === 'Alive',
+          dead: characterItem.status === 'Dead',
+          unknown: characterItem.status === 'unknown'
+        }"
+      ></p>
+
+      <p>{{ characterItem.status }} - {{ characterItem.species }}</p>
+    </div>
+
+    <span class="item-details__subtitle">Last known location:</span>
+    <p class="item-details__text">{{ characterItem.location.name }}</p>
+
+    <span class="item-details__subtitle">First seen in:</span>
+    <p class="item-details__text">{{ characterItem.origin.name }}</p>
+  </div>
+</div>

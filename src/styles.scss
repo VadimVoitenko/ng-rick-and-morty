@@ -74,3 +74,10 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+
+.mat-mdc-form-field-bottom-align {
+  height: 0px !important;
+}
+.mat-mdc-form-field {
+  max-height: 57px !important;
+}

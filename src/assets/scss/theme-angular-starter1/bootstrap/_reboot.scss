@@ -57,16 +57,6 @@ ol {
   }
 }
 
-p {
-  &:not(:last-child) {
-    margin-bottom: 1em;
-  }
-  &:last-child,
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-}
-
 sup {
   top: -0.7em;
   font-size: rem-calc(10px);

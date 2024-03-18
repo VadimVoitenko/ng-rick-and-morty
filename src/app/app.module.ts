@@ -16,6 +16,7 @@ import { ErrorInterceptor } from 'src/app/core/interceptors/error.interceptor'
 import { MatSelectModule } from '@angular/material/select'
 
 import { environment } from 'src/environments/environment'
+import { RickAndMortyService } from './modules/home/services/rick-and-morty.service'
 
 registerLocaleData(localeUk)
 
@@ -33,6 +34,7 @@ registerLocaleData(localeUk)
   providers: [
     { provide: RECAPTCHA_V3_SITE_KEY, useValue: environment.recaptcha.siteKey },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    RickAndMortyService,
   ],
   bootstrap: [AppComponent],
 })

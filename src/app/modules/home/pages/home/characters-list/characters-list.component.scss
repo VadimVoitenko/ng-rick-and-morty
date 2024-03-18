@@ -1,0 +1,43 @@
+@import 'src/assets/scss/theme-angular-starter1/bootstrap/_variables.scss';
+
+section .characters {
+  &-wrapper {
+    max-width: 1250px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 12px 33px 12px;
+
+    @media only screen and (max-width: get-breakpoint(md)) {
+      padding: 20px 50px 33px 50px;
+    }
+
+    @media only screen and (max-width: 500px) {
+      padding: 20px 10px;
+    }
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 27px;
+
+    @media only screen and (max-width: get-breakpoint(md)) {
+      grid-template-columns: repeat(1, 1fr);
+      justify-items: center;
+      gap: 20px;
+    }
+
+    &__item {
+      max-width: 600px;
+      width: 100%;
+
+      @media only screen and (max-width: get-breakpoint(sm)) {
+        max-width: 450px;
+      }
+
+      @media only screen and (max-width: 500px) {
+        max-width: 300px;
+      }
+    }
+  }
+}

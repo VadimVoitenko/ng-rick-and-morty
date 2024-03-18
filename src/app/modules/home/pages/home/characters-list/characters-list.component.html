@@ -1,0 +1,13 @@
+<section class="characters">
+  <div class="container">
+    <div class="characters-wrapper">
+      <div class="characters-list">
+        <app-character-item
+          *ngFor="let characterItem of charactersList"
+          [characterItem]="characterItem"
+          class="characters-list__item"
+        ></app-character-item>
+      </div>
+    </div>
+  </div>
+</section>
