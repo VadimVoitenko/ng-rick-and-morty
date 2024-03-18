@@ -1,7 +1,7 @@
-<section class="section-filter-btn">
+<section class="filter-btn">
   <div class="container">
     <div class="content">
-      <button mat-flat-button (click)="onClick()" class="filter-btn">{{ activeFilter ? 'Remove Filter' : 'Filter' }}</button>
+      <button mat-flat-button (click)="onClick()">{{ activeFilter ? 'Remove Filter' : 'Filter' }}</button>
 
       <ng-container *ngIf="isClick">
         <div class="active-filter-btn">

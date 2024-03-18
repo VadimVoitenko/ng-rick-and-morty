@@ -25,16 +25,13 @@
     letter-spacing: 0.5px;
     cursor: pointer;
     transition: 0.2s ease-out;
+    height: 60px;
+    min-width: 143px;
 
     &:hover {
       background-color: grey;
       transition: 0.2s ease-out;
     }
-  }
-
-  .filter-btn {
-    height: 60px;
-    min-width: 155px;
   }
 
   .mat-mdc-button.mat-mdc-button-base,
@@ -67,7 +64,6 @@
       flex-direction: column;
       align-items: center;
       margin-left: 0px;
-      gap: 0px;
     }
   }
 
@@ -81,11 +77,8 @@
       justify-content: center;
       gap: 10px;
     }
-
-    .select-btn {
-      width: 215px;
-    }
   }
+
   .input {
     height: 80px;
     width: 258px;
