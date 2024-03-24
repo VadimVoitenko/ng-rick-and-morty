@@ -8,6 +8,16 @@
           class="character-list__item"
         ></app-character-item>
       </div>
+      <div class="character-pagination">
+        <ngb-pagination
+          [collectionSize]="totalCharacters"
+          [maxSize]="5"
+          [(page)]="currentPage"
+          [rotate]="true"
+          [pageSize]="pageSize"
+          (pageChange)="onPageChange($event)"
+        ></ngb-pagination>
+      </div>
     </div>
   </div>
 </section>

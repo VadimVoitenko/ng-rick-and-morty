@@ -57,7 +57,7 @@
     "@commitlint/cli": "^16.2.1",
     "@commitlint/config-angular": "^17.6.6",
     "@commitlint/config-conventional": "^16.2.1",
-    "@ng-bootstrap/ng-bootstrap": "^15.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^15.1.2",
     "@ng-select/ng-select": "11.0.0",
     "@ngneat/transloco": "^3.1.4",
     "@nguniversal/builders": "16.1.0",

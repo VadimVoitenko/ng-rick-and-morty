@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material/input'
 import { CharacterListComponent } from './pages/home/character-list/character-list.component'
 import { CharacterItemComponent } from './pages/home/character-item/character-item.component'
 import { HeroViewComponent } from './pages/hero/hero-view/hero-view.component'
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap'
 
 @NgModule({
   declarations: [HomeComponent, HeroComponent, FilterButtonComponent, CharacterListComponent, CharacterItemComponent, HeroViewComponent],
@@ -30,6 +31,7 @@ import { HeroViewComponent } from './pages/hero/hero-view/hero-view.component'
     MatSelectModule,
     MatInputModule,
     MatFormFieldModule,
+    NgbPaginationModule,
   ],
 })
 export class HomeModule {}

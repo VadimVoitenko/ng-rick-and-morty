@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { ICharacter } from '../../../interfaces/icharacter'
-import { RickAndMortyService } from '../../../services/rick-and-morty.service'
+import { CharacterService } from '../../../services/character.service'
 import { ActivatedRoute, Router } from '@angular/router'
 import { Location } from '@angular/common'
 
@@ -13,11 +13,7 @@ export class HeroViewComponent implements OnInit {
   id!: number
   characterItem!: ICharacter
 
-  constructor(
-    private rickAndMortyService: RickAndMortyService,
-    private route: ActivatedRoute,
-    private location: Location,
-  ) {}
+  constructor(private characterService: CharacterService, private route: ActivatedRoute, private location: Location) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
@@ -27,7 +23,7 @@ export class HeroViewComponent implements OnInit {
   }
 
   getCharacter(id: number): void {
-    this.rickAndMortyService.getCharacterById(id).subscribe(
+    this.characterService.getCharacterById(id).subscribe(
       (response: any) => {
         this.characterItem = response
       },

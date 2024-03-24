@@ -14,9 +14,10 @@ import { TranslocoRootModule } from 'src/app/transloco-root.module'
 import { CoreModule } from 'src/app/core/core.module'
 import { ErrorInterceptor } from 'src/app/core/interceptors/error.interceptor'
 import { MatSelectModule } from '@angular/material/select'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 import { environment } from 'src/environments/environment'
-import { RickAndMortyService } from './modules/home/services/rick-and-morty.service'
+import { CharacterService } from './modules/home/services/character.service'
 
 registerLocaleData(localeUk)
 
@@ -30,11 +31,12 @@ registerLocaleData(localeUk)
     HttpClientModule,
     TranslocoRootModule,
     MatSelectModule,
+    NgbModule,
   ],
   providers: [
     { provide: RECAPTCHA_V3_SITE_KEY, useValue: environment.recaptcha.siteKey },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    RickAndMortyService,
+    CharacterService,
   ],
   bootstrap: [AppComponent],
 })

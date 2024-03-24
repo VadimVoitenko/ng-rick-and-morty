@@ -1,6 +1,7 @@
-import { Component, OnInit, Output } from '@angular/core'
-import { RickAndMortyService } from '../../../services/rick-and-morty.service'
+import { Component, OnInit } from '@angular/core'
 import { ICharacter } from '../../../interfaces/icharacter'
+import { ICharacterResponse } from '../../../interfaces/icharacters-response'
+import { CharacterService } from '../../../services/character.service'
 
 @Component({
   selector: 'app-character-list',
@@ -9,28 +10,25 @@ import { ICharacter } from '../../../interfaces/icharacter'
 })
 export class CharacterListComponent implements OnInit {
   characterList: ICharacter[] = []
-  // currentPage = 1
-  // totalRecords: number = 0
+  currentPage: number = 1
+  pageSize: number = 20
+  totalCharacters: number = 0
 
-  constructor(private rickAndMortyService: RickAndMortyService) {}
+  constructor(private characterService: CharacterService) {}
 
   ngOnInit(): void {
-    this.getCharacters(1)
+    this.getCharacters()
   }
 
-  getCharacters(page: number): void {
-    this.rickAndMortyService.getCharacters(page).subscribe((data: any) => (this.characterList = data.results))
+  getCharacters(): void {
+    this.characterService.getCharacters(this.currentPage).subscribe((data: ICharacterResponse) => {
+      this.characterList = data.results
+      this.totalCharacters = data.info.count
+    })
   }
 
-  // nextPage(): void {
-  //   this.currentPage++
-  //   this.loadCharacters(this.currentPage)
-  // }
-
-  // previousPage(): void {
-  //   if (this.currentPage > 1) {
-  //     this.currentPage--
-  //     this.loadCharacters(this.currentPage)
-  //   }
-  // }
+  onPageChange(page: number) {
+    this.currentPage = page
+    this.getCharacters()
+  }
 }
