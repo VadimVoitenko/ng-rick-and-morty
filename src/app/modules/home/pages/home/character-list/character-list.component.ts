@@ -3,25 +3,23 @@ import { RickAndMortyService } from '../../../services/rick-and-morty.service'
 import { ICharacter } from '../../../interfaces/icharacter'
 
 @Component({
-  selector: 'app-characters-list',
-  templateUrl: './characters-list.component.html',
-  styleUrls: ['./characters-list.component.scss'],
+  selector: 'app-character-list',
+  templateUrl: './character-list.component.html',
+  styleUrls: ['./character-list.component.scss'],
 })
-export class CharactersListComponent implements OnInit {
-  charactersList: ICharacter[] = []
+export class CharacterListComponent implements OnInit {
+  characterList: ICharacter[] = []
   // currentPage = 1
   // totalRecords: number = 0
 
   constructor(private rickAndMortyService: RickAndMortyService) {}
 
   ngOnInit(): void {
-    this.loadCharacters(1)
+    this.getCharacters(1)
   }
 
-  loadCharacters(page: number): void {
-    this.rickAndMortyService.getCharacters(page).subscribe((data: any) => {
-      this.charactersList = data.results
-    })
+  getCharacters(page: number): void {
+    this.rickAndMortyService.getCharacters(page).subscribe((data: any) => (this.characterList = data.results))
   }
 
   // nextPage(): void {

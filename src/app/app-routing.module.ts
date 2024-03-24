@@ -8,7 +8,7 @@ import { HeroComponent } from './modules/home/pages/hero/hero.component'
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'hero/:id', component: HeroComponent },
+  { path: 'home/hero/:id', component: HeroComponent },
 ]
 
 const baseRoutes: Routes = [

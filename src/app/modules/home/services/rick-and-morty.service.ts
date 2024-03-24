@@ -4,22 +4,24 @@ import { Observable } from 'rxjs'
 import { ICharacterResponse } from '../interfaces/icharacters-response'
 import { ICharacter } from '../interfaces/icharacter'
 
-export interface RickAndMortyResponse {
-  results: ICharacter[]
-  info: {
-    next: string
-  }
-}
+// export interface RickAndMortyResponse {
+//   results: ICharacter[]
+//   info: {
+//     next: string
+//   }
+// }
 
 @Injectable()
-export class RickAndMortyService implements OnInit {
-  private apiURL = 'https://rickandmortyapi.com/api/'
+export class RickAndMortyService {
+  private readonly apiURL = 'https://rickandmortyapi.com/api/'
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {}
-
-  getCharacters(currentPage: number): Observable<ICharacterResponse> {
+  public getCharacters(currentPage: number): Observable<ICharacterResponse> {
     return this.http.get<ICharacterResponse>(this.apiURL + 'character/?page' + currentPage)
+  }
+
+  public getCharacterById(id: number): Observable<ICharacter> {
+    return this.http.get<ICharacter>(this.apiURL + 'character/' + id)
   }
 }

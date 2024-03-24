@@ -14,11 +14,12 @@ import { FilterButtonComponent } from './pages/home/filter-button/filter-button.
 import { FormsModule } from '@angular/forms'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
-import { CharactersListComponent } from './pages/home/characters-list/characters-list.component'
+import { CharacterListComponent } from './pages/home/character-list/character-list.component'
 import { CharacterItemComponent } from './pages/home/character-item/character-item.component'
+import { HeroViewComponent } from './pages/hero/hero-view/hero-view.component'
 
 @NgModule({
-  declarations: [HomeComponent, HeroComponent, FilterButtonComponent, CharactersListComponent, CharacterItemComponent],
+  declarations: [HomeComponent, HeroComponent, FilterButtonComponent, CharacterListComponent, CharacterItemComponent, HeroViewComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

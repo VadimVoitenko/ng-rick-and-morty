@@ -2,7 +2,7 @@
   <img src="{{ characterItem.image }}" alt="{{ characterItem.image }}" class="item-image" />
 
   <div class="item-details">
-    <a routerLink="/hero/{{ characterItem.id }}" class="item-details__title">{{ characterItem.name }}</a>
+    <a [routerLink]="['/home/hero', characterItem.id]" class="item-details__title">{{ characterItem.name }}</a>
 
     <div class="item-details__status">
       <p
