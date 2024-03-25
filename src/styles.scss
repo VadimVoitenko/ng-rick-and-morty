@@ -82,12 +82,33 @@ body {
   max-height: 57px !important;
 }
 
-.page-link.active,
-.active > .page-link {
-  background-color: #202329;
-  border-color: #202329;
+:root {
+  --pagination-background-color: #3c3e44;
+  --pagination-text-color: #fff;
+  --pagination-active-text-color: #3c3e44;
+  --pagination-active-background-color: #fff;
+  --pagination-hover-background-color: #fff;
+}
+
+.page-link {
+  background-color: var(--pagination-background-color);
+  border-color: var(--pagination-background-color);
+  color: var(--pagination-text-color);
+
+  @media only screen and (max-width: 400px) {
+    font-size: 12px;
+  }
 }
 
 .page-link:focus {
-  box-shadow: 0 0 0 0.25rem rgba(139, 139, 139, 0.308);
+  box-shadow: 0 0 0 0 0.25rem rgba(139, 139, 139, 0.308);
+}
+.page-item.active .page-link {
+  background-color: var(--pagination-active-background-color);
+  border-color: var(--pagination-background-color);
+  color: var(--pagination-active-text-color);
+}
+
+.page-link:hover {
+  background-color: var(--pagination-hover-background-color);
 }

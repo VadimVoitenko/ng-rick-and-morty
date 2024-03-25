@@ -11,6 +11,7 @@ import { CharacterService } from '../../../services/character.service'
 export class CharacterListComponent implements OnInit {
   characterList: ICharacter[] = []
   currentPage: number = 1
+  maxSize: number = 0
   pageSize: number = 20
   totalCharacters: number = 0
 
@@ -18,6 +19,7 @@ export class CharacterListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCharacters()
+    this.calculateMaxSize()
   }
 
   getCharacters(): void {
@@ -25,6 +27,11 @@ export class CharacterListComponent implements OnInit {
       this.characterList = data.results
       this.totalCharacters = data.info.count
     })
+  }
+
+  calculateMaxSize() {
+    const screenWidth = window.innerWidth
+    this.maxSize = screenWidth < 390 ? 3 : 5
   }
 
   onPageChange(page: number) {
