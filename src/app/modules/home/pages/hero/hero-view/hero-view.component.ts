@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ICharacter } from '../../../interfaces/icharacter'
 import { CharacterService } from '../../../services/character.service'
-import { ActivatedRoute, Router } from '@angular/router'
+import { ActivatedRoute } from '@angular/router'
 import { Location } from '@angular/common'
 
 @Component({
@@ -31,6 +31,17 @@ export class HeroViewComponent implements OnInit {
         console.error('Error fetching data:', error)
       },
     )
+  }
+
+  getStatusColor(charcterItem: ICharacter): string {
+    switch (charcterItem.status) {
+      case 'Alive':
+        return 'alive'
+      case 'Dead':
+        return 'dead'
+      default:
+        return 'unknown'
+    }
   }
 
   goBack() {

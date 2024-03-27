@@ -9,4 +9,15 @@ import { ICharacter } from '../../../interfaces/icharacter'
 export class CharacterItemComponent {
   @Input()
   characterItem!: ICharacter
+
+  getStatusColor(charcterItem: ICharacter): string {
+    switch (charcterItem.status) {
+      case 'Alive':
+        return 'alive'
+      case 'Dead':
+        return 'dead'
+      default:
+        return 'unknown'
+    }
+  }
 }

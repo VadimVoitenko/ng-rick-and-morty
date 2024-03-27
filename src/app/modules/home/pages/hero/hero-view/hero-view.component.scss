@@ -1,6 +1,12 @@
+@import 'src/assets/scss/theme-angular-starter1/bootstrap/_variables.scss';
+
 section.view {
   .view-wrapper {
     padding: 0px 105px;
+
+    @media only screen and (max-width: get-breakpoint(sm)) {
+      padding: 0 0;
+    }
   }
 
   button {
@@ -22,6 +28,7 @@ section.view {
 
   .item {
     display: flex;
+    flex-direction: row;
     width: 100%;
     border-radius: 10px;
     background-color: #3c3e44;
@@ -30,13 +37,14 @@ section.view {
       max-width: 592px;
       max-height: 572px;
       width: 100%;
+      object-fit: contain;
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
     }
 
     &-details {
       margin: 25px;
-      width: 100%;
+      // width: 100%;
 
       &__title {
         color: #f5f5f5;
@@ -91,47 +99,59 @@ section.view {
       }
     }
 
-    @media only screen and (max-width: get-breakpoint(sm)) {
-      max-width: 450px;
-
-      &-image {
-        max-width: 180px;
-        max-height: 170px;
-      }
-
-      &-details {
-        padding: 8px 9px;
-
-        &__title {
-          font-size: 20px;
-        }
-
-        &__subtitle {
-          padding-top: 0px;
-          line-height: normal;
-        }
-
-        &__text {
-          font-size: 16px;
-        }
-      }
-    }
-
-    @media only screen and (max-width: 500px) {
-      max-width: 300px;
+    @media only screen and (max-width: get-breakpoint(tb)) {
       flex-direction: column;
+      // justify-content: center;
       align-items: center;
-
       &-image {
+        max-width: 450px;
+        max-height: 450px;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
       }
-
-      &-details {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
     }
+
+    // @media only screen and (max-width: get-breakpoint(sm)) {
+    //   max-width: 450px;
+
+    //   &-image {
+    //     max-width: 180px;
+    //     max-height: 170px;
+    //   }
+
+    //   &-details {
+    //     padding: 8px 9px;
+
+    //     &__title {
+    //       font-size: 20px;
+    //     }
+
+    //     &__subtitle {
+    //       padding-top: 0px;
+    //       line-height: normal;
+    //     }
+
+    //     &__text {
+    //       font-size: 16px;
+    //     }
+    //   }
+    // }
+
+    // @media only screen and (max-width: 500px) {
+    //   max-width: 300px;
+    //   flex-direction: column;
+    //   align-items: center;
+
+    //   &-image {
+    //     border-top-right-radius: 10px;
+    //     border-bottom-right-radius: 10px;
+    //   }
+
+    //   &-details {
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
+    //   }
+    // }
   }
 }

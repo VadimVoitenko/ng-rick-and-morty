@@ -5,14 +5,7 @@
     <a [routerLink]="['/home/hero', characterItem.id]" class="item-details__title">{{ characterItem.name }}</a>
 
     <div class="item-details__status">
-      <p
-        class="status-indicator"
-        [ngClass]="{
-          alive: characterItem.status === 'Alive',
-          dead: characterItem.status === 'Dead',
-          unknown: characterItem.status === 'unknown'
-        }"
-      ></p>
+      <p class="status-indicator {{ getStatusColor(characterItem) }}"></p>
 
       <p>{{ characterItem.status }} - {{ characterItem.species }}</p>
     </div>
