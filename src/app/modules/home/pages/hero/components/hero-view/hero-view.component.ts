@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { ICharacter } from '../../../interfaces/icharacter'
-import { CharacterService } from '../../../services/character.service'
+import { ICharacter } from '../../../../interfaces/icharacter'
+import { CharacterService } from '../../../../services/character.service'
 import { ActivatedRoute } from '@angular/router'
 import { Location } from '@angular/common'
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
-import { ICharacter } from '../../../interfaces/icharacter'
-import { ICharacterResponse } from '../../../interfaces/icharacters-response'
-import { CharacterService } from '../../../services/character.service'
+import { ICharacter } from '../../../../interfaces/icharacter'
+import { ICharacterResponse } from '../../../../interfaces/icharacters-response'
+import { CharacterService } from '../../../../services/character.service'
 
 @Component({
   selector: 'app-character-list',
